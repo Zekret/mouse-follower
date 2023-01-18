@@ -14,11 +14,12 @@ function App() {
       window.addEventListener('pointermove', handleMove)
     }
 
-    //cleanup:
-    //
+    // -> cuando el componente se desmonta
+    // -> cuando cambian las dependencias, antes de ejecutar
+    //    el efecto de nuevo
     return () => {
       window.removeEventListener('pointermove', handleMove)
-    } //Para asegurarse de limpiar la ejecucion o dependencia de los eventos
+    }
   }, [enabled])
 
   return (
